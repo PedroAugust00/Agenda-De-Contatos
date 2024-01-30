@@ -98,7 +98,7 @@ public class Main {
 
     public static void ContarContatos() {
         int totalContatos = contatos.size();
-        System.out.println("Você tem " + totalContatos + " contatos salvos.");
+        System.out.println(STR."Você tem \{totalContatos} contatos salvos.");
     }
 
     public static void ListarContatos() {
@@ -107,7 +107,7 @@ public class Main {
         } else {
             System.out.println("Aqui estão todos os seus contatos:");
             for (Contato contato : contatos) {
-                System.out.println("ID: " + contato.getId() + ", Nome: " + contato.getNome() + ", Sobrenome: " + contato.getSobrenome() + " ,DDD: " + contato.getDdd() + " ,numero: " + contato.getNumeroContato());
+                System.out.println(STR."ID: \{contato.getId()}, Nome: \{contato.getNome()}, Sobrenome: \{contato.getSobrenome()} ,DDD: \{contato.getDdd()} ,numero: \{contato.getNumeroContato()}");
             }
         }
     }
@@ -115,7 +115,7 @@ public class Main {
         try {
             PrintWriter writer = new PrintWriter("contatos.txt", StandardCharsets.UTF_8);
             for (Contato contato : contatos) {
-                writer.println("ID: " + contato.getId() + ", Nome: " + contato.getNome() + ", Sobrenome: " + contato.getSobrenome());
+                writer.println(STR."ID: \{contato.getId()}, Nome: \{contato.getNome()}, Sobrenome: \{contato.getSobrenome()}, ddd: \{contato.getDdd()}, numero: \{contato.getNumeroContato()}");
             }
             writer.close();
             System.out.println("Contatos salvos com sucesso!");
